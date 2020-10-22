@@ -5,11 +5,16 @@ A repo on general database practice
 - [w3schools](https://www.w3schools.com/sql/default.asp)
 
 ## MySQL
+- TBA
 
 ## NoSQL
+- TBA
 
 ## MongoDB
+- TBA
 
 ## Hive
+- TBA
 
 ## RedShift
+- TBA
