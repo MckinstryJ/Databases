@@ -52,3 +52,22 @@ SELECT * FROM A WHERE Open BETWEEN 40 AND 41;
 
 /* Select from list */
 SELECT DISTINCT * FROM A WHERE Date IN ('2010-10-13');
+
+/* Union - distinct values by default*/
+SELECT A.Date FROM A
+UNION
+SELECT T.Date FROM T; 
+
+/* Union all */
+SELECT A.Date FROM A
+UNION ALL
+SELECT T.Date FROM T; 
+
+ /* Having */
+ SELECT DISTINCT A.Date, A.Volume FROM A HAVING A.Volume > 10;
+ 
+/* Exists */
+SELECT A.Close FROM A WHERE EXISTS (SELECT T.Date FROM T WHERE T.Volume > 10);
+
+/* INTO new table */
+SELECT * INTO test FROM A;
