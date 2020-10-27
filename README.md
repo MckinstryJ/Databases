@@ -15,7 +15,7 @@ A repo on general database practice
 - TBA
 
 ## Postgres
-- TBA
+- [PostgreSQL Tutorial For Beginners | Learn PostgreSQL |...](https://youtu.be/-VO7YjQeG6Y)
 
 ## NoSQL (Apache Cassandra)
 - TBA
