@@ -6,8 +6,9 @@ A repo on general database practice
 - [SQLite with Python](https://youtu.be/byHcYRpMgI4)
 
 ## Oracle Cloud SQL
-- Used to:
-  - ...
+- Used:
+  - cheaper storage
+  - by... SAP and AWS
 - [Oracle Autonomous Database Specialist](https://youtu.be/srZDPXB0Jhc)
 
 ## Hive
@@ -32,10 +33,10 @@ A repo on general database practice
   - faster at larger datasets
 
 ## ETL (AWS S3 to Redshift)
-- TBA
-
-## Data Lakes with S3 and Apache Spark
-- TBA
+- Used:
+  - overall is cheaper for the pay as you go model
+- python to AWS and back is similar to Oracle Cloud SQL
+  - python to S3 is storing files but python to Redshift or Cassandra is storing databases.
 
 ## Data Pipelines with Apache Airflow
 - TBA
