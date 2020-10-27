@@ -1,0 +1,88 @@
+# Connecting via Shell
+- 'enter' for all for defaults then password
+
+# DDefL - CREATE, ALTER, DROP and TRUNCATE
+# DManL - INSERT, UPDATE and DELETE
+# DQueL - SELECT
+# TransConL - SAVEPOINT, ROLLBACK and COMMIT
+# DConL - GRANT and REVOKE
+
+# Creating Schema (give authorization and comment on schema)
+# - why? 
+CREATE SCHEMA test AUTHORIZATION postgres;
+COMMENT ON SCHEMA test IS 'test';
+
+# ER diagrams show relationships between objects
+# One to many - one project relates with many employees
+# many to one - employees work for 1 department
+# one to one - 1 employee relates with 1 supervisor
+# many to many - employee works on multiple projects
+# double lines means there must be at least 1 to 1 relationship between
+# composite attributes can be divided into subattributes
+# single valued - only have 1 value
+# multivalued - can have range of values
+# derived attributes - with age you can derive birthday and vis versa
+# stored attribute - an attribute that is stored and not ness...derived
+# complex attributes - has multiple attributes within one i.e. address
+
+# Truncate - delete all except table
+TRUNCATE TABLE students;
+
+# change name of table
+ALTER TABLE students RENAME TO infostudents;
+
+# add new column
+ALTER TABLE students ADD dob date;
+
+# add two columns
+ALTER TABLE students ADD dob date, ADD sex char;
+
+# change column type
+ALTER TABLE students ALTER COLUMN student_id TYPE int;
+
+# remove column
+ALTER TABLE students DROP COLUMN student_id;
+
+# drop table - removes table
+DROP TABLE students;
+
+# Candidate Key - minimal rep of a tuple, no redundant attributes
+# Super Key - serval candidate keys make a candidate key
+# Primary Key - can be candidate key, just one
+# Alternative Key - when one is primary then rest is alternative
+# Foreign Key - connects relationships between tables
+
+# Constraints
+## NOT NULL - a field cannot be null
+## UNIQUE - all features in row is unique
+## CHECK - all features satisfy a specific condition
+## DEFAULT - each feature must have a default value
+## INDEX - used to create and retrieve data from the databse quickly
+	- seems important for primary keys
+
+# Normalization
+- first normal form - each feature has a single value
+- second normal form - should be 1NF and have single primary key
+- third normal form - should be 2NF and should not have any transititve functions
+- boyce-codd normal form - should be 3NF and divide to where only 1 candidate key is present
+
+# NESTED Operations
+- UNION - "or"
+- INTERSECT - "and"
+- MINUS - 'in A but not in B'
+
+# LIMIT - limits how many will be shown
+# LIKE - "____" selects rows where element has N number of characters
+# OFFSET - start at some later row
+# FETCH NEXT ... ROWS ONLY - fetch ... number of rows only
+
+# VIEW - combinding columns to a smaller table that is located in views
+CREATE VIEW AS SELECT fname, lname, pname FROM employee, project, works_on
+WHERE ssn = essn AND pno = pnumber;
+
+# Procedures - section of code you want to save
+# inserting multiple rows
+CREATE PROCEDURE...
+# good for inserting starter rows into multiple tables at once
+
+# Triggers - invoked when changes are made
