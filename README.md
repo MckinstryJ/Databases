@@ -16,6 +16,7 @@ A repo on general database practice
 
 ## Spark
 - TBA
+- <b>Note</b>: if the distributed memory (RAM) is not large enough, then it will store those results on disk
 
 ## Postgres
 - Used to:
@@ -27,7 +28,7 @@ A repo on general database practice
   - support materialized views - views saved on disk
 - [PostgreSQL Tutorial For Beginners | Learn PostgreSQL |...](https://youtu.be/-VO7YjQeG6Y)
 
-## NoSQL (Apache Cassandra) - Not Only SQL or Not SQL
+## NoSQL (Apache Cassandra / ElasticSearch) - Not Only SQL or Not SQL
 - Used to:
   - replace the tendency to create shards with RDBMS
   - faster at larger datasets
