@@ -85,4 +85,16 @@ WHERE ssn = essn AND pno = pnumber;
 CREATE PROCEDURE...
 # good for inserting starter rows into multiple tables at once
 
-# Triggers - invoked when changes are made
+# Aggregate functions - can alter
+AVG()
+COUNT()
+MAX()
+MIN()
+SUM()
+
+# Domains - a complex insurance on schema feature type (must be ...)
+CREATE DOMAIN cpi_data as REAL CHECK (value >= 0 AND value <= 10);
+
+# Cluster - a schema object that contains one or more tables all of which have one or more col in common
+CREATE CLUSTER
+

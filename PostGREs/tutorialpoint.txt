@@ -1,0 +1,61 @@
+# list out databases
+\l
+
+# list out tables
+\dt
+
+# connect to database
+\connect <name>
+
+# Change column type
+ALTER TABLE <name> ALTER COLUMN <name> TYPE <new_type>;
+
+# Add column to table
+ALTER TABLE <name> ADD COLUMN emp_id <type>;
+
+# Update row
+UPDATE <table> SET <column> = <value> WHERE <condition>;
+
+# Update column to be a primary key
+ALTER TABLE <table> ADD PRIMARY KEY(<table>);
+
+# Add Composite type to table
+CREATE TYPE <name> AS (<name> int, <name> int);
+ALTER TABLE <table> ADD COLUMN <comp name>;
+
+# Update composite column - voliates 1NF
+UPDATE <table> SET <column> = (10, 10) WHERE <condition>;
+
+# Accessing element in composite
+SELECT (<col name>).<comp ele name> FROM <table>;
+
+# add not null constraint
+ALTER TABLE <table> ALTER COLUMN <name> SET NOT NULL;
+
+# create procedure
+CREATE PROCEDURE insert_data(n text, l text, p varchar(10), e int)
+LANGUAGE SQL
+AS $$
+INSERT INTO customer VALUES (n, l, p, e);
+$$;
+
+# create function
+CREATE OR REPLACE FUNCTION totalRecords()
+RETURNS integer AS $total$
+DECARE
+	total integer;
+BEGIN
+	SELECT count(*) INTO total FROM customer;
+RETURN total;
+END;
+$total$ LANGUAGE plpgsql;
+
+# Create trigger
+CREATE TRIGGER audits AFTER INSERT ON customer FOR EACH ROW EXECUTE PROCEDURE auditlogfunc();
+
+
+# BEGIN starts a block of transactions (aka begin transaction)
+# END ends a block of transactions (aka commit)
+# ROLLBACK undoes the most recent tranaction
+# LOCK prevents a person from modifying a table
+# datatype SERIAL creates a iterative datatype that is increased for each new insert
