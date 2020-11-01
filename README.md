@@ -27,6 +27,8 @@ A repo on general database practice
     - durability (once committed stays committed)
   - support materialized views - views saved on disk
 - [PostgreSQL Tutorial For Beginners | Learn PostgreSQL |...](https://youtu.be/-VO7YjQeG6Y)
+- postgresqltutorial.com
+- tutorialpoint.com
 
 ## NoSQL (Apache Cassandra / ElasticSearch) - Not Only SQL or Not SQL
 - Used to:
